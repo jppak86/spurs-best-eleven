@@ -5,8 +5,8 @@ const Schema = mongoose.Schema
 const playerSchema = new Schema({
   name: String,
   position: String,
-  injury: Boolean,
-  team: [{type: Schema.Types.ObjectId, ref: "Team"}]
+  injury: Boolean
+  
   
 
 })

@@ -29,18 +29,12 @@
       <option value="Central">Central</option>
       <option value="Striker">Striker</option>
     </select>
-    <select name="teamId">
-      <% teams.forEach(team => { %>
-        <option value="<%= team._id %>"><%= team.name %></option>
-    <% }) %>
-    </select>
     <label>
       Injury?
       <input 
         type="checkbox" 
         name="injury" 
-				<%= player.injury ? "checked" : "" %> 
-      >
+				id="injury-input"/>
     </label>
     <button type="submit">Add Player</button>
   </form>

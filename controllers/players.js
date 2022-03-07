@@ -1,17 +1,23 @@
 import { Player } from '../models/player.js'
-import { Team } from '../models/team.js'
 
 function newPlayer(req, res) {
-  Player.populate('team')
-  Team.find({}, function (error, teams) {
-    res.render("palyers/new", {
-      teams,
-      title: 'ADD Player',
-  })
+  Player.find({}, function(error, players){
+    res.render('players/new', {
+      title: 'Add Player',
+      players,
     })
-  }
+  })
+}
 
+
+function create(req, res) {
+  Player.create(req.body, function (err, player) {
+    res.redirect('/players/new')
+  })
+  
+}
 
 export {
   newPlayer as new,
+  create
 }

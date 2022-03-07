@@ -8,7 +8,7 @@
     Please first ensure that the team is not in the dropdown 
     <select>
       <% teams.forEach(team => { %>
-        <option><%= team.name %></option>
+        <option value="<%= team._id %>"><%= team.name %></option>
       <% }) %>
     </select>
   </p>
