@@ -12,11 +12,11 @@
       <% }) %>
     </select>
   </p>
-  <form id="add-team-form" action="/teams" method="POST">
+  <form id="add-team-form" action="/teams/<%=team._id %>?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
-    <input type="text" name="name" id="name-input">
+    <input type="text" value="<%= team.name %>" name="name" id="name-input">
     <label for="formation-input">Formation:</label>
-    <input type="text" name="formation" id="formation-input">
+    <input type="text" value="<%= team.formation %>" name="formation" id="formation-input">
     <label for="GK-input">GK:</label>
     <select name="GK">
       <% players.forEach(player => { %>
@@ -83,7 +83,7 @@
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <button type="submit">Add Team</button>
+    <button type="submit">Save Team</button>
   </form>
 </main>
 

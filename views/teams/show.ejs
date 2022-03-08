@@ -1,0 +1,42 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/teams/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Name: </div>
+    <div>
+      <%= team.name %>
+      <a href="/teams/<%= team._id %>/edit">
+        <button>Edit Team</button>
+      </a>
+    </div>
+    <div>Formation: </div>
+    <div><%= team.formation %></div>
+    <div>GK: </div>
+    <div><%= team.GK.name %></div>
+    <div>LFB: </div>
+    <div><%= team.LFB.name %></div>
+    <div>RFB: </div>
+    <div><%= team.RFB.name %></div>
+    <div>CB: </div>
+    <div><%= team.CB.name %></div>
+    <div>Sweeper: </div>
+    <div><%= team.Sweeper.name %></div>
+    <div>LMF: </div>
+    <div><%= team.LMF.name %></div>
+    <div>RMF: </div>
+    <div><%= team.RMF.name %></div>
+    <div>DMF: </div>
+    <div><%= team.DMF.name %></div>
+    <div>AMF: </div>
+    <div><%= team.AMF.name %></div>
+    <div>Central: </div>
+    <div><%= team.Central.name %></div>
+    <div>AMF: </div>
+    <div><%= team.Striker.name %></div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const playerSchema = new Schema({
   name: String,
   position: String,
-  injury: Boolean
+  injury: { type: Boolean, default: false}
   
   
 

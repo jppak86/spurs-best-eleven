@@ -13,9 +13,62 @@ async function newTeam (req, res) {
 
 function create (req, res) {
   Team.create(req.body).then(team => {
-    res.redirect("/")
+    res.redirect("/teams/index")
   })
 }
+
+function index(req, res) {
+  Team.find({}).then(teams => {
+  res.render('teams/index', {
+    title: "All Teams",
+    teams
+  })
+})
+}
+
+function show(req, res) {
+  Team.findById(req.params.id)
+  .populate({ path: 'GK RFB LFB CB Sweeper LMF RMF DMF AMF Central Striker'},)
+  .then(team => {
+    res.render('teams/show', {
+      title: 'Team Detial',
+      team,
+
+
+    })
+  }) 
+    
+}
+
+function deleteTeam(req, res) {
+  Team.findByIdAndDelete(req.params.id).then(team =>{
+    res.redirect("/teams")
+  })
+}
+
+function edit(req, res) {
+  Team.findById(req.params.id).then(team => {
+    res.render("teams/edit", {
+      team,
+      title: "Edit Team"
+    })
+  })
+}
+
+function update(req, res) {
+  req.body.injury = !!req.body.injury
+  for (let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  Team.findByIdAndUpdate(req.params.id, req.body).then(teams => { Player.findByIdAndUpdate(req.params.id, req.body).then(players => {
+    res.redirect(`/teams/${team._id}`, {
+      teams,
+      players
+      })
+    })
+  })
+}
+
 
 // function newTeam(req, res) {
 //   Team.find({}).then(teams => {
@@ -65,5 +118,10 @@ function create (req, res) {
 
 export {
   newTeam as new,
-  create
+  create,
+  index,
+  show,
+  deleteTeam as delete,
+  edit,
+  update
 }
