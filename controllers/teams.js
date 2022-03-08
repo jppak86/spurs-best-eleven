@@ -33,8 +33,6 @@ function show(req, res) {
     res.render('teams/show', {
       title: 'Team Detial',
       team,
-
-
     })
   }) 
     
@@ -46,29 +44,26 @@ function deleteTeam(req, res) {
   })
 }
 
-function edit(req, res) {
-  Team.findById(req.params.id).then(team => {
-    res.render("teams/edit", {
-      team,
-      title: "Edit Team"
-    })
+
+async function edit (req, res) {
+  const team = await Team.findById(req.params.id)
+  const players = await Player.find({})
+  res.render('teams/edit', {
+    title: "Edit Team",
+    team,
+    players
   })
 }
 
 function update(req, res) {
-  req.body.injury = !!req.body.injury
-  for (let key in req.body) {
-    if(req.body[key] === "") delete req.body[key]
-  }
-  Team.findByIdAndUpdate(req.params.id, req.body).then(teams => { Player.findByIdAndUpdate(req.params.id, req.body).then(players => {
-    res.redirect(`/teams/${team._id}`, {
-      teams,
-      players
-      })
-    })
+  Team.findById(req.params.id)
+  .then(team => {
+    res.redirect(`/teams/${team._id}`)
   })
-}
 
+}
+  
+      
 
 // function newTeam(req, res) {
 //   Team.find({}).then(teams => {

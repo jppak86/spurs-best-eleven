@@ -4,14 +4,6 @@
 
 <main>
   <h1><%= title %></h1>
-  <p>
-    Please first ensure that the team is not in the dropdown 
-    <select>
-      <% teams.forEach(team => { %>
-        <option value="<%= team._id %>"><%= team.name %></option>
-      <% }) %>
-    </select>
-  </p>
   <form id="add-team-form" action="/teams/<%=team._id %>?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" value="<%= team.name %>" name="name" id="name-input">
