@@ -18,69 +18,69 @@
     <label for="formation-input">Formation:</label>
     <input type="text" name="formation" id="formation-input">
     <label for="GK-input">GK:</label>
-    <select>
+    <select name="GK">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="LFB-input">LFB:</label>
-    <select>
+    <select name="LFB">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="RFB-input">RFB:</label>
-    <select>
+    <select name="RFB">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="CB-input">CB:</label>
-    <select>
+    <select name="CB" >
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="Sweeper-input">Sweeper:</label>
-    <select>
+    <select name="Sweeper">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="LMF-input">LMF:</label>
-    <select>
+    <select name="LMF">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="RMF-input">RMF:</label>
-    <select>
+    <select name=""RMF>
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="DMF-input">DMF:</label>
-    <select>
+    <select name="DMF">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="AMF-input">AMF:</label>
-    <select>
+    <select name="AMF">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="Central-input">Central:</label>
-    <select>
+    <select name="Central">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <label for="Striker-input">Striker:</label>
-    <select>
+    <select name="Striker">
       <% players.forEach(player => { %>
-        <option><%= player.name %></option>
+        <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
     <button type="submit">Add Team</button>
