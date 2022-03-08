@@ -12,8 +12,9 @@ async function newTeam (req, res) {
 }
 
 function create (req, res) {
+  console.log(req.body)
   Team.create(req.body).then(team => {
-    res.redirect("/teams/index")
+    res.redirect("/teams")
   })
 }
 
@@ -56,8 +57,7 @@ async function edit (req, res) {
 }
 
 function update(req, res) {
-  Team.findById(req.params.id)
-  .then(team => {
+  Team.findByIdAndUpdate(req.params.id, req.body).then(team => {
     res.redirect(`/teams/${team._id}`)
   })
 
