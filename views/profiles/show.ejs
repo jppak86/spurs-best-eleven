@@ -1,0 +1,43 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (profile.avatar) { %>
+    <div>
+      <img 
+        class="profile-avatar"
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %> avatar"
+      >
+    </div>
+  <% } %>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add Your Team!</h2>
+    <form action="/profiles/<%= profile._id %>/yourteam" method="POST">
+      <label for="team-input">Select Your Team:</label>
+    <select name="team">
+      <% teams.forEach(team => { %>
+        <option value="<%= team._id %>"><%= team.name %></option>
+      <% }) %>
+    </select>
+      </label>
+      <button type="submit">Add Your Team</button>
+    </form>
+    <% if (profile.cats.length)  {%>
+      <h2>
+        <%= isSelf ? "Your team is" : `${profile.name} slects` %> <%= team.name %> team!
+      </h2>
+      <% profile.team.forEach(cat => { %>
+        <h3>
+          <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %>
+        </h3>
+      <% }) %>
+    <% } else { %>
+      <h2>
+        <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any cats.
+      </h2> 
+    <% } %> 
+  </main>
+  
+  <%- include('../partials/footer') %>
