@@ -1,5 +1,6 @@
 import { Team } from '../models/team.js'
 import { Player } from '../models/player.js'
+import { Profile } from '../models/profile.js'
 
 async function newTeam (req, res) {
   const teams = await Team.find({})
@@ -16,6 +17,10 @@ function create (req, res) {
   Team.create(req.body).then(team => {
     res.redirect("/teams")
   })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/teams')
+  // })
 }
 
 function index(req, res) {
@@ -23,8 +28,12 @@ function index(req, res) {
   res.render('teams/index', {
     title: "All Teams",
     teams
+    })
   })
-})
+  // .catch(err => {
+  // console.log(err)
+  // res.redirect("/teams")
+  // })
 }
 
 function show(req, res) {
@@ -36,13 +45,20 @@ function show(req, res) {
       team,
     })
   }) 
-    
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/teams')
+  // }) 
 }
 
 function deleteTeam(req, res) {
   Team.findByIdAndDelete(req.params.id).then(team =>{
     res.redirect("/teams")
   })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/teams')
+  // })
 }
 
 
@@ -54,12 +70,20 @@ async function edit (req, res) {
     team,
     players
   })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/teams')
+  // })
 }
 
 function update(req, res) {
   Team.findByIdAndUpdate(req.params.id, req.body).then(team => {
     res.redirect(`/teams/${team._id}`)
   })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect(`/teams`)
+  // })
 
 }
   
@@ -111,6 +135,8 @@ function update(req, res) {
 //   })
 //   }
 
+
+
 export {
   newTeam as new,
   create,
@@ -118,5 +144,5 @@ export {
   show,
   deleteTeam as delete,
   edit,
-  update
+  update,
 }

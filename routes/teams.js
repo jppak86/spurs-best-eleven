@@ -15,6 +15,7 @@ router.put("/:id", teamCtrl.update)
 
 router.post('/', isLoggedIn, teamCtrl.create)
 
+
 export {
   router
 }

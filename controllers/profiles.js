@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Team } from '../models/team.js'
 
 function index(req, res) {
   Profile.find({})
@@ -8,31 +9,48 @@ function index(req, res) {
 			title: "Profiles"
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
 }
 
 function show(req, res) {
-  Profile.findById(req.params.id)
+  Profile.findById(req.params.id).populate("team")
   .then((profile) => {
     Profile.findById(req.user.profile._id)
     .then(self => {
       const isSelf = self._id.equals(profile._id)
-      res.render("profiles/show", {
-        title: ` ${profile.name}'s profile`,
-        profile,
-        isSelf,
+        Team.find({}).then(teams => {
+          res.render("profiles/show", {
+            title: `${profile.name}'s profile`,
+            profile,
+            isSelf,
+            teams,
+        })
+      })
       })
     })
-  })
-}
+    .catch((err) => {
+      console.log(err)
+      res.redirect("/")
+    })
+  }
+
 
 function createTeam(req, res) {
+  console.log(req.body)
   Profile.findById(req.user.profile._id).then(profile => {
-    profile.team.push(req.body)
+    profile.team = req.body.team
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
     })
   })
+.catch(err => {
+  console.log(err)
+  res.redirect(`/profiles/${req.user.profile._id}`)
+})
 }
 
 export {
