@@ -26,7 +26,7 @@
     <% if (profile.team)  {%>
       <h2>
         <%= isSelf ? "Your team is" : `${profile.name} has` %> <%= profile.team.name %>
-        <%= profile.team.Captain.name %>
+        <%= profile.team.Captain %>
       </h2>
       
     <% } else { %>
