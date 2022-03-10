@@ -1,4 +1,5 @@
 import { Player } from '../models/player.js'
+import { Team } from '../models/team.js'
 
 function newPlayer(req, res) {
   Player.find({}).then(players => 
@@ -28,9 +29,19 @@ function deletePlayer(req, res) {
   })
 }
 
+async function edit (req, res) {
+  const player = await Player.findById(req.params.id)
+  res.render('players/new', {
+    title: "Edit Player",
+    team,
+    player
+  })
+}
+
 
 export {
   newPlayer as new,
   create,
-  deletePlayer as delete
+  deletePlayer as delete,
+  edit
 }

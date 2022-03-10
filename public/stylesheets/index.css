@@ -1,3 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after {
+  /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default but can be overridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+
 h2 {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 }

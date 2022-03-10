@@ -4,41 +4,86 @@
 
 <main>
   <h1><%= title %></h1>
-  <section>
-    <div>Name: </div>
-    <div>
-      <%= team.name %>
-      <a href="/teams/<%= team._id %>/edit">
-        <button>Edit Team</button>
-      </a>
-    </div>
-    <div>Formation: </div>
+  <div>
+    Your team: <%= team.name %>
+    <a href="/teams/<%= team._id %>/edit">
+      <button>Edit Team</button>
+    </a>
+  </div>
+  <div>Formation: </div>
     <div><%= team.formation %></div>
-    <div>GK: </div>
-    <div><%= team.GK.name %></div>
-    <div>LFB: </div>
-    <div><%= team.LFB.name %></div>
-    <div>RFB: </div>
-    <div><%= team.RFB.name %></div>
-    <div>CB: </div>
-    <div><%= team.CB.name %></div>
-    <div>Sweeper: </div>
-    <div><%= team.Sweeper.name %></div>
-    <div>LMF: </div>
-    <div><%= team.LMF.name %></div>
-    <div>RMF: </div>
-    <div><%= team.RMF.name %></div>
-    <div>DMF: </div>
-    <div><%= team.DMF.name %></div>
-    <div>AMF: </div>
-    <div><%= team.AMF.name %></div>
-    <div>Central: </div>
-    <div><%= team.Central.name %></div>
-    <div>AMF: </div>
-    <div><%= team.Striker.name %></div>
-    <div>Captain: </div>
-    <div><%= team.Captain.name %></div>
-  </section>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>injury</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>👉🏼Captain👍🏼</td>
+          <td><%= team.Captain.name %></td>
+          <td><%= team.Captain.injury %></td>
+        </tr>
+        <tr>
+          <td>GK</td>
+          <td><%= team.GK.name %></td>
+          <td><%= team.GK.injury %></td>
+        </tr>
+        <tr>
+          <td>LFB</td>
+          <td><%= team.LFB.name %></td>
+          <td><%= team.LFB.injury %></td>
+        </tr>
+        <tr>
+          <td>RFB</td>
+          <td><%= team.RFB.name %></td>
+          <td><%= team.RFB.injury %></td>
+        </tr>
+        <tr>
+          <td>CB</td>
+          <td><%= team.CB.name %></td>
+          <td><%= team.CB.injury %></td>
+        </tr>
+        <tr>
+          <td>Sweeper</td>
+          <td><%= team.Sweeper.name %></td>
+          <td><%= team.Sweeper.injury %></td>
+        </tr>
+        <tr>
+          <td>LMF</td>
+          <td><%= team.LMF.name %></td>
+          <td><%= team.LMF.injury %></td>
+        </tr>
+        <tr>
+          <td>RMF</td>
+          <td><%= team.RMF.name %></td>
+          <td><%= team.RMF.injury %></td>
+        </tr>
+        <tr>
+          <td>DMF</td>
+          <td><%= team.DMF.name %></td>
+          <td><%= team.DMF.injury %></td>
+        </tr>
+        <tr>
+          <td>AMF</td>
+          <td><%= team.AMF.name %></td>
+          <td><%= team.AMF.injury %></td>
+        </tr>
+        <tr>
+          <td>Central</td>
+          <td><%= team.Central.name %></td>
+          <td><%= team.Central.injury %></td>
+        </tr>
+        <tr>
+          <td>Striker</td>
+          <td><%= team.Striker.name %></td>
+          <td><%= team.Striker.injury %></td>
+        </tr>
+    </tbody>
+  </table>
 </main>
 
 <%- include('../partials/footer') %>
