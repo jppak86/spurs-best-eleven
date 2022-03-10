@@ -5,6 +5,10 @@ form {
   font-size: 2rem;
 }
 
+p {
+  font-size: 1.5rem;
+}
+
 form * {
   padding: 5px;
   border-radius: 5px;

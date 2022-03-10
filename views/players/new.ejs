@@ -39,6 +39,34 @@
     </label>
     <button type="submit">Add Player</button>
   </form>
+<h2>All the Players</h2>
+<% if (players.name) {%>
+<table id="list">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# Oh hey, this is an ejs comment! It starts with a # %>
+    <% players.forEach(player => { %>
+      <tr>
+        <td>⚽️🏃🏼</td>
+        <td><%= player.name %></td>
+        <td>
+          <form id="delete-form" action="/players/<%= player._id %>?_method=DELETE" method="POST">
+            <button id="delete-button">X</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } else { %>
+  <h2>There is no player yet!</h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

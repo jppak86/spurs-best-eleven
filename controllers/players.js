@@ -1,10 +1,11 @@
 import { Player } from '../models/player.js'
 
 function newPlayer(req, res) {
-  Player.find({}, function(error, players){
-    res.render('players/new', {
+  Player.find({}).then(players => 
+    { res.render('players/new', {
       title: 'Add Player',
       players,
+      
     })
   })
 }
@@ -21,9 +22,15 @@ function create(req, res) {
   
 }
 
+function deletePlayer(req, res) {
+  Player.findByIdAndDelete(req.params.id).then(player => {
+    res.redirect("/players/new")
+  })
+}
 
 
 export {
   newPlayer as new,
-  create
+  create,
+  deletePlayer as delete
 }
