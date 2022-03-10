@@ -17,7 +17,7 @@ const teamSchema = new Schema({
   AMF: {type: Schema.Types.ObjectId, ref: "Player"}, 
   Central:{type: Schema.Types.ObjectId, ref: "Player"}, 
   Striker: {type: Schema.Types.ObjectId, ref: "Player"}, 
-  Captain: {type: Schema.Types.ObjectId, ref: "Player"},
+  Captain: {type: Schema.Types.ObjectId, ref: "Player"}
 })
 
 const Team = mongoose.model('Team', teamSchema)

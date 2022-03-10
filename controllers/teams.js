@@ -38,7 +38,7 @@ function index(req, res) {
 
 function show(req, res) {
   Team.findById(req.params.id)
-  .populate({ path: 'GK RFB LFB CB Sweeper LMF RMF DMF AMF Central Striker'},)
+  .populate({ path: 'GK RFB LFB CB Sweeper LMF RMF DMF AMF Central Striker Captain'},)
   .then(team => {
     res.render('teams/show', {
       title: 'Team Detial',
