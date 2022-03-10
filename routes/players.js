@@ -8,7 +8,7 @@ const router = Router()
 router.get('/new', playerCtrl.new)
 router.post('/', isLoggedIn, playerCtrl.create)
 router.delete("/:id", isLoggedIn, playerCtrl.delete)
-router.get("/:id", isLoggedIn, playerCtrl.edit)
+
 
 export {
   router

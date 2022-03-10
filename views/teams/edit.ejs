@@ -9,68 +9,68 @@
     <input type="text" value="<%= team.name %>" name="name" id="name-input">
     <label for="formation-input">Formation:</label>
     <input type="text" value="<%= team.formation %>" name="formation" id="formation-input">
-    <label for="GK-input">GK:</label>
+    <label for="GK-input">GK (GoalKeeper):</label>
     <select name="GK">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="LFB-input">LFB:</label>
-    <select name="LFB">
+    <label for="LCB-input">LCB (Left Center Back):</label>
+    <select name="LCB">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="RFB-input">RFB:</label>
-    <select name="RFB">
+    <label for="RCB-input">RCB (Right Center Back):</label>
+    <select name="RCB">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="CB-input">CB:</label>
+    <label for="CB-input">CB (Center Back):</label>
     <select name="CB" >
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="Sweeper-input">Sweeper:</label>
-    <select name="Sweeper">
+    <label for="LDM-input">LDM (Left Defensive Midfielder):</label>
+    <select name="LDM">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="LMF-input">LMF:</label>
-    <select name="LMF">
+    <label for="RDM-input">RDM (Right Defensive Midfielder):</label>
+    <select name="RDM">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="RMF-input">RMF:</label>
-    <select name="RMF">
+    <label for="CAM-input">CAM (Center Attacking Midfielder):</label>
+    <select name="CAM">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="DMF-input">DMF:</label>
-    <select name="DMF">
+    <label for="LM-input">LM (Left Midfielder):</label>
+    <select name="LM">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="AMF-input">AMF:</label>
-    <select name="AMF">
+    <label for="RM-input">RM (Right Midfielder):</label>
+    <select name="RM">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="Central-input">Central:</label>
-    <select name="Central">
+    <label for="LS-input">LS (Left Striker):</label>
+    <select name="LS">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
-    <label for="Striker-input">Striker:</label>
-    <select name="Striker">
+    <label for="RS-input">RS (Right Striker):</label>
+    <select name="RS">
       <% players.forEach(player => { %>
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>

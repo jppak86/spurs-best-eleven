@@ -17,17 +17,17 @@
     <input type="text" name="name" id="name-input">
     <label for="position-input">Position:</label>
     <select name="position" id="position-select">
-      <option value="GK">GK</option>
-      <option value="LFB">LFB</option>
-      <option value="RFB">RFB</option>
-      <option value="CB">CB</option>
-      <option value="Sweeper">Sweeper</option>
-      <option value="LMF">LMF</option>
-      <option value="DMF">DMF</option>
-      <option value="RMF">RMF</option>
-      <option value="AMF">AMF</option>
-      <option value="Central">Central</option>
-      <option value="Striker">Striker</option>
+      <option value="GK">GoalKeeper</option>
+      <option value="LCB">Left Center Back </option>
+      <option value="RCB">Right Center Back</option>
+      <option value="CB">Cebter Back</option>
+      <option value="LDM">Left Defensive Midfielder</option>
+      <option value="RDM">Right Defensive Midfielder</option>
+      <option value="LM">Left Midfielder</option>
+      <option value="RM">Right Midfielder</option>
+      <option value="CAM">Center Attacking Midfielder</option>
+      <option value="LS">Left Striker</option>
+      <option value="RS">Right Striker</option>
     </select>
     <label>
       Injury?
@@ -55,6 +55,7 @@
       <tr>
         <td>⚽️🏃🏼</td>
         <td><%= player.name %></td>
+        <td><%= player.position %></td>
         <td>
           <form id="delete-form" action="/players/<%= player._id %>?_method=DELETE" method="POST">
             <button id="delete-button">X</button>

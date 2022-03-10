@@ -29,19 +29,11 @@ function deletePlayer(req, res) {
   })
 }
 
-async function edit (req, res) {
-  const player = await Player.findById(req.params.id)
-  res.render('players/new', {
-    title: "Edit Player",
-    team,
-    player
-  })
-}
 
 
 export {
   newPlayer as new,
   create,
   deletePlayer as delete,
-  edit
+ 
 }
