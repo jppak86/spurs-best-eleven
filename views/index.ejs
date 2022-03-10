@@ -4,13 +4,17 @@
 <main>
   <h1>Hello👋 <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
+    <h2>Lets make a ⚽Soccer team by adding Players!🏃🏃‍♀️</h2>
     <div>
       <img
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
       />
     </div>
-  <% } %>
+  <% } else { %>
+    <h2>⚽ to make a soccer team ⚽</h2>
+    <h2>🥅 Please login! 🥅</h2>
+    <% } %>
 </main>
 
 <%- include('./partials/footer') %>
