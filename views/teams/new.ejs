@@ -83,6 +83,12 @@
         <option value="<%= player._id %>"><%= player.name %></option>
       <% }) %>
     </select>
+    <label for="Captain-input">Captain:</label>
+    <select name="Captain">
+      <% players.forEach(player => { %>
+        <option value="<%= player._id %>"><%= player.name %></option>
+      <% }) %>
+    </select>
     <button type="submit">Add Team</button>
   </form>
 </main>
