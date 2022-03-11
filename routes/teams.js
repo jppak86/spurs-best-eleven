@@ -13,7 +13,6 @@ router.delete("/:id", isLoggedIn, teamCtrl.delete)
 router.get("/:id/edit", isLoggedIn, teamCtrl.edit)
 router.put("/:id", isLoggedIn, teamCtrl.update)
 
-router.post('/', isLoggedIn, teamCtrl.create)
 
 
 export {
