@@ -35,7 +35,7 @@ function show(req, res) {
   .populate({ path: 'GK LCB RCB CB LDM RDM CAM LM RM LS RS Captain'})
   .then(team => {
     res.render('teams/show', {
-      title: 'Team Detial',
+      title: 'Team Detail',
       team,
     })
   })
