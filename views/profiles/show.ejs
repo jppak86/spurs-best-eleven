@@ -12,7 +12,7 @@
     </div>
   <% } %>
   <% if (isSelf) { %> 
-    <h2>Add Your Team!</h2>
+    <h2>Add Your Soccer Team!</h2>
     <form action="/profiles/<%= profile._id %>/yourteam" method="POST">
       <!-- <label for="team-input">Select Your Team:</label> -->
     <select name="team">
@@ -20,12 +20,12 @@
         <option value="<%= team._id %>"><%= team.name %></option>
       <% }) %>
     </select>
-      <button type="submit">Add Your Team</button>
+      <button type="submit">Add Team🏃🏻‍♀️🏃🏻🏃🏻‍♂️</button>
     </form>
     <% } %>
     <% if (profile.team)  {%>
       <h2>
-        <%= isSelf ? "Your team is" : `${profile.name} has` %> <%= profile.team.name %>
+        <%= isSelf ? "Your team is" : `${profile.name} has` %> 👏👊<%= profile.team.name %>👊👏
       </h2>
       
     <% } else { %>
