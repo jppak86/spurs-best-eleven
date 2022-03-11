@@ -14,7 +14,7 @@
   </p>
   <form id="add-player-form" action="/players" method="POST">
     <label for="name-input">Name:</label>
-    <input type="text" name="name" id="name-input">
+    <input required type="text" name="name" id="name-input">
     <label for="position-input">Position:</label>
     <select name="position" id="position-select">
       <option value="GK">GoalKeeper</option>
@@ -37,7 +37,7 @@
         checked
 				id="injury-input"/>
     </label>
-    <button type="submit">Add Player</button>
+    <button id="add-player-button" type="submit">Add Player</button>
   </form>
 <h2>All the Players</h2>
 <% if (players.length) {%>
