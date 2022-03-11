@@ -4,6 +4,9 @@
 </head>
 <body>
   <nav>
+    <div id="football" class="fa-2x">
+      <i id="icon" class="fa-solid fa-futbol fa-spin" style="--fa-animation-duration: 4s;"></i>
+    </div>
     <a href="/">Home</a>
     <a href="/players/new">Add Player</a>
     <a href="/teams/new">Add Team</a>
@@ -11,13 +14,15 @@
     <a href="/profiles">Profile</a>
     <% if (user) { %>
       <a href="/auth/logout">
-        <button type="submit">Logout</button>
+        <div class="fa-2x">
+        <i class="fa-solid fa-arrow-right-from-bracket fa-fade" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;"></i>
+        </div>
       </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
+        <div class="fa-2x">
+          <i class="fa-solid fa-arrow-right-to-bracket fa-fade" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;"></i>
+          </div>
       </a>
     <% } %>
   </nav>

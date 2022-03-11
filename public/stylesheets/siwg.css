@@ -41,3 +41,10 @@
   position: absolute;
   width: 1px;
 }
+
+#icon {
+  color: aliceblue;
+}
+#football {
+  margin: 0;
+}

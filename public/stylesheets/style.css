@@ -29,7 +29,7 @@ nav {
   display: flex;
   justify-content:flex-end;
   align-items: center;
-  padding: 0 20px 0 30px:
+  padding: 0 20px 0 30px;
 }
 
 nav > a {
@@ -59,4 +59,11 @@ button {
 
 #team-select {
   font-size: 1.8rem;
+}
+
+#icon {
+  color: aliceblue;
+}
+#football {
+  margin: 0;
 }
