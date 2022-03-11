@@ -8,7 +8,7 @@
   <% if (user?.profile.avatar) { %>
     <h2>Lets make a ⚽Soccer team by adding Players!🏃🏃‍♀️</h2>
     <div>
-      <img
+      <img id="google-avatar"
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
       />
@@ -17,7 +17,7 @@
     <h2>⚽ to make a soccer team ⚽</h2>
     <h2>🥅 Please login! 🥅</h2>
     <% } %>
-    <img src="../images/son.gif" alt="son-puskas">
+    <img id="sonny" src="../images/son.gif" alt="son-puskas">
 </main>
 
 <%- include('./partials/footer') %>

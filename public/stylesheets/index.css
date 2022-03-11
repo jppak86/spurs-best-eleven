@@ -17,8 +17,14 @@ html {
 }
 
 
-
-
 h2 {
   font-size: 2.2rem;
+}
+
+#google-avatar {
+  border-radius: 50px;
+}
+
+#sonny {
+  border-radius: 30px;
 }
