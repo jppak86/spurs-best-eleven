@@ -14,7 +14,6 @@
   <% if (isSelf) { %> 
     <h2>Add Your Soccer Team!</h2>
     <form action="/profiles/<%= profile._id %>/yourteam" method="POST">
-      <!-- <label for="team-input">Select Your Team:</label> -->
     <select id="team-select" name="team">
       <% teams.forEach(team => { %>
         <option value="<%= team._id %>"><%= team.name %></option>
